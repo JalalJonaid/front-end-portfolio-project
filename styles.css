@@ -1,0 +1,41 @@
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: beige;
+}
+
+.header {
+    grid-area: 1/1/2/6;
+    background: #F1FF2E;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemonZone {
+    grid-area: 2/1/6/4;
+    background: #06c3e4;
+    height: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputField {
+    grid-area: 4/4/5/6;
+    justify-content: center;
+}
+
+.buttonField {
+    grid-area: 5/4/6/6;
+}
+
+.graphicField {
+    grid-area: 2/4/4/6;
+}
+
+
