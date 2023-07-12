@@ -16,7 +16,7 @@
     align-items: center;
 }
 
-.pokemonZone {
+.pokemonBox {
     grid-area: 2/1/6/4;
     background: #06c3e4;
     height: flex;
@@ -27,7 +27,6 @@
 
 .inputField {
     grid-area: 4/4/5/6;
-    height: flex;
     background: #584023;
     justify-content: center;
     align-items: center;
