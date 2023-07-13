@@ -6,15 +6,28 @@ function getPokemon(e) {
   fetch(`https://pokeapi.co/api/v2/type/${type}`)
     .then((response) => response.json())
     .then((data) => {
-      document.querySelector(".pokemonBox").innerHTML = `
+        console.log(data);
+    
+    let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
+    let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+    
+    console.log(randomPokemonIndex);
+    console.log(randomPokemon);
+
+    fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
+        
+        console.log(pokemon);
+
+        document.querySelector(".pokemonBox").innerHTML = `
         <div>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/22.png" alt="bird"/>
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
         </div>
         <div class="pokemonInfo">
         <h1></h1>
-        <h2>Type: ${data.name}</h2>
+        <h2>New Pokemon: ${pokemon.name}</h2>
         </div>
         `;
+        })  
     })
     .catch((err) => {
       console.log("Pokemon Type not Found", err);
