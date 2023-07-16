@@ -27,14 +27,41 @@
 
 .inputField {
     grid-area: 4/4/5/6;
-    background: #584023;
+    background: #ffffff;
     justify-content: center;
     align-items: center;
+}
+
+.inputField button {
+    background-color: white;
+    border: none;
 }
 
 .buttonField {
     grid-area: 5/4/6/6;
 }
+
+.buttonField button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .buttonField button :hover {background-color: #3e8e41}
+  
+  .buttonField button :active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
 
 .graphicField {
     grid-area: 2/4/4/6;
