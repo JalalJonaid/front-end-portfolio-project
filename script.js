@@ -1,8 +1,8 @@
 document.querySelector("#search").addEventListener("click", getPokemon);
-document.querySelector("#normalType").addEventListener("click", getPokemonNormal);
-document.querySelector("#fightingType").addEventListener("click", getPokemonFighting);
-document.querySelector("#flyingType").addEventListener("click", getPokemonFlying);
-document.querySelector("#poisonType").addEventListener("click", getPokemonPoison);
+document.querySelector("#normalType").addEventListener("click", getPokemonNormal); //1
+document.querySelector("#fightingType").addEventListener("click", getPokemonFighting); //2
+document.querySelector("#flyingType").addEventListener("click", getPokemonFlying); //3
+document.querySelector("#poisonType").addEventListener("click", getPokemonPoison); //4
 document.querySelector("#groundType").addEventListener("click", getPokemonGround); //5
 document.querySelector("#rockType").addEventListener("click", getPokemonRock); //6
 document.querySelector("#bugType").addEventListener("click", getPokemonBug); //7
@@ -35,14 +35,24 @@ const type = document.querySelector("#normalType").value;
     fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
         
         console.log(pokemon);
+        
+        if(pokemon.types.length>1){
+        pokemonTypeSecondary = pokemon.types[1].type.name;
+        }
+
+        else{
+            pokemonTypeSecondary = "None!"
+        }
 
         document.querySelector(".pokemonBox").innerHTML = `
         <div>
                 <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
         </div>
+        <br>
         <div class="pokemonInfo">
         <h1></h1>
-        <h2>New Pokemon: ${pokemon.name}</h2>
+        <p>Name: ${pokemon.name}</p>
+        <p>Secondary Type: ${pokemonTypeSecondary}</p>
         </div>
         `;
         })  

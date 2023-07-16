@@ -14,7 +14,7 @@
 
 .header {
     grid-area: 1/1/2/6;
-    background: #F1FF2E;
+    background: beige;
     height: 173px;
     display: flex;
     justify-content: center;
@@ -23,16 +23,27 @@
 
 .pokemonBox {
     grid-area: 2/1/6/4;
-    background: #06c3e4;
+    background:beige;
     height: flex;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Pokemon_Font";
+    color: black;
+    font-size: large;
+}
+
+.pokemonInfo {
+    color: blue;
+    justify-content: end;
+    align-items: end;
+    font-size: 35px;
 }
 
 .inputField {
-    grid-area: 4/4/5/6;
+    grid-area: 4/4/6/6;
     background: #ffffff;
+    display: block;
     justify-content: center;
     align-items: center;
 }
@@ -76,7 +87,7 @@
 .graphicField {
     grid-area: 2/4/4/6;
     height: flex;
-    background: #00ea40;
+    background: beige;
     justify-content: center;
     align-items: center;
 }
@@ -84,4 +95,13 @@
 .pokemonBox img {
     width: 400px;
     height: 400px;
+}
+
+.inputField #pokemonType{
+    font-family: "Pokemon_Font";
+    font-size: 23px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
