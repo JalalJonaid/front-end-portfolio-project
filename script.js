@@ -902,6 +902,7 @@ function getPokemon(e) {
     <br>
     <div class="pokemonInfo">
     <h1></h1>
+    <p>Type Selected: ${pokemon.types[0].type.name}</p>
     <p>Name: ${pokemon.name}</p>
     <p>Secondary Type: ${pokemonTypeSecondary}</p>
     <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
