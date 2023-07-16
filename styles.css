@@ -35,7 +35,7 @@
 }
 
 .pokemonInfo {
-    color: yellowgreen;
+    color: rgb(9, 0, 128);
     justify-content: end;
     align-items: end;
     font-size: 35px;
