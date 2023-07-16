@@ -5,15 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <title>Random Pokemon Generator</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <div class="parent">
       <div class="header">
-        <img src="assets/Pokemon Lookup Header.png">
+        <img src="assets/Pokemon Lookup Header.png" /><br>
+        <a href="./aboutPage.html">Read Me!</a>
       </div>
       <div class="pokemonBox"></div>
       <div class="inputField">
@@ -21,36 +36,84 @@
           id="pokemonType"
           type="number"
           placeholder="Enter Number"
-          min="1" max="18"
+          min="1"
+          max="18"
         />
-        <br>
-        <br>
-        <button id="normalType"><img src="./assets/Type_Normal.webp" width="70" height="29"></button>
-        <button id="fireType"><img src="./assets/Type_Fire.webp" width="70" height="29"></button>
-        <button id="waterType"><img src="./assets/Type_Water.webp" width="70" height="29"></button>
-        <button id="electricType"><img src="./assets/Type_Electric.webp" width="70" height="29"></button>
-        <button id="grassType"><img src="./assets/Type_Grass.webp" width="70" height="29"></button>
-        <button id="iceType"><img src="./assets/Type_Ice.webp" width="70" height="29"></button>
-        <button id="fightingType"><img src="./assets/Type_Fighting.webp" width="70" height="29"></button>
-        <button id="poisonType"><img src="./assets/Type_Poison.webp" width="70" height="29"></button>
-        <button id="groundType"><img src="./assets/Type_Ground.webp" width="70" height="29"></button>
-        <button id="flyingType"><img src="./assets/Type_Flying.webp" width="70" height="29"></button>
-        <button id="psychicType"><img src="./assets/Type_Psychic.webp" width="70" height="29"></button>
-        <button id="bugType"><img src="./assets/Type_Bug.webp" width="70" height="29"></button>
-        <button id="rockType"><img src="./assets/Type_Rock.webp" width="70" height="29"></button>
-        <button id="ghostType"><img src="./assets/Type_Ghost.webp" width="70" height="29"></button>
-        <button id="dragonType"><img src="./assets/Type_Dragon.webp" width="70" height="29"></button>
-        <button id="darkType"><img src="./assets/Type_Dark.webp" width="70" height="29"></button>
-        <button id="steelType"><img src="./assets/Type_Steel.webp" width="70" height="29"></button>
-        <button id="fairyType"><img src="./assets/Type_Fairy.webp" width="70" height="29"></button>
+        <br />
+        <br />
+        <button id="normalType">
+          <img src="./assets/Type_Normal.webp" width="70" height="29" />
+        </button>
+        <button id="fireType">
+          <img src="./assets/Type_Fire.webp" width="70" height="29" />
+        </button>
+        <button id="waterType">
+          <img src="./assets/Type_Water.webp" width="70" height="29" />
+        </button>
+        <button id="electricType">
+          <img src="./assets/Type_Electric.webp" width="70" height="29" />
+        </button>
+        <button id="grassType">
+          <img src="./assets/Type_Grass.webp" width="70" height="29" />
+        </button>
+        <button id="iceType">
+          <img src="./assets/Type_Ice.webp" width="70" height="29" />
+        </button>
+        <button id="fightingType">
+          <img src="./assets/Type_Fighting.webp" width="70" height="29" />
+        </button>
+        <button id="poisonType">
+          <img src="./assets/Type_Poison.webp" width="70" height="29" />
+        </button>
+        <button id="groundType">
+          <img src="./assets/Type_Ground.webp" width="70" height="29" />
+        </button>
+        <button id="flyingType">
+          <img src="./assets/Type_Flying.webp" width="70" height="29" />
+        </button>
+        <button id="psychicType">
+          <img src="./assets/Type_Psychic.webp" width="70" height="29" />
+        </button>
+        <button id="bugType">
+          <img src="./assets/Type_Bug.webp" width="70" height="29" />
+        </button>
+        <button id="rockType">
+          <img src="./assets/Type_Rock.webp" width="70" height="29" />
+        </button>
+        <button id="ghostType">
+          <img src="./assets/Type_Ghost.webp" width="70" height="29" />
+        </button>
+        <button id="dragonType">
+          <img src="./assets/Type_Dragon.webp" width="70" height="29" />
+        </button>
+        <button id="darkType">
+          <img src="./assets/Type_Dark.webp" width="70" height="29" />
+        </button>
+        <button id="steelType">
+          <img src="./assets/Type_Steel.webp" width="70" height="29" />
+        </button>
+        <button id="fairyType">
+          <img src="./assets/Type_Fairy.webp" width="70" height="29" />
+        </button>
       </div>
       <div class="buttonField">
-        <button id="search" class="search" onclick="updatePikachu()">Generate Random Pokemon with Same Type</button>
+        <button id="search" class="search" onclick="updatePikachu()">
+          Generate Random Pokemon with Same Type
+        </button>
       </div>
       <div class="graphicField">
-        <img id="pikachu_face" src="assets/pikachu_default.png" class="responsive" width="400" height="400">
+        <img
+          id="pikachu_face"
+          src="assets/pikachu_default.png"
+          class="responsive"
+          width="400"
+          height="400"
+        />
         <div class="pikachuTips">
-            <p>Pikachu says: "Enter in a number from 1-18 to generate a random Pokemon with the same type!</p>
+          <p>
+            Pikachu says: "Enter in a number from 1-18 to generate a random
+            Pokemon with the same type!
+          </p>
         </div>
       </div>
     </div>
