@@ -39,6 +39,9 @@
 
 .buttonField {
     grid-area: 5/4/6/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttonField button {
@@ -54,13 +57,13 @@
     box-shadow: 0 9px #999;
   }
   
-  .buttonField button :hover {background-color: #3e8e41}
+  .buttonField button:hover {background-color: #3e8e41}
   
-  .buttonField button :active {
+  .buttonField button:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+}
 
 
 .graphicField {
