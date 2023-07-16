@@ -19,32 +19,31 @@ document.querySelector("#darkType").addEventListener("click", getPokemonDark); /
 document.querySelector("#fairyType").addEventListener("click", getPokemonFairy); //18
 
 function getPokemonNormal(e) {
-const type = document.querySelector("#normalType").value;
+  const type = document.querySelector("#normalType").value;
 
   fetch(`https://pokeapi.co/api/v2/type/1`)
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
-    
-    let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-    let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-    
-    console.log(randomPokemonIndex);
-    console.log(randomPokemon);
+      console.log(data);
 
-    fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-        
-        console.log(pokemon);
-        
-        if(pokemon.types.length>1){
-        pokemonTypeSecondary = pokemon.types[1].type.name;
-        }
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
 
-        else{
-            pokemonTypeSecondary = "None!"
-        }
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
 
-        document.querySelector(".pokemonBox").innerHTML = `
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
         <div>
                 <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
         </div>
@@ -53,9 +52,12 @@ const type = document.querySelector("#normalType").value;
         <h1></h1>
         <p>Name: ${pokemon.name}</p>
         <p>Secondary Type: ${pokemonTypeSecondary}</p>
+        <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+        <p>Height: ${pokemon.height}</p>
+        <p>Weight: ${pokemon.weight}</p>
         </div>
         `;
-        })  
+        });
     })
     .catch((err) => {
       console.log("Pokemon Type not Found", err);
@@ -64,628 +66,45 @@ const type = document.querySelector("#normalType").value;
   e.preventDefault();
 }
 function getPokemonFighting(e) {
-    const type = document.querySelector("#fightingType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/2`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonFlying(e) {
-    const type = document.querySelector("#flyingType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/3`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonPoison(e) {
-    const type = document.querySelector("#poisonType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/4`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonGround(e) {
-    const type = document.querySelector("#groundType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/5`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonRock(e) {
-    const type = document.querySelector("#rockType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/6`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonBug(e) {
-    const type = document.querySelector("#bugType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/7`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonGhost(e) {
-    const type = document.querySelector("#ghostType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/8`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonSteel(e) {
-    const type = document.querySelector("#steelType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/9`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonFire(e) {
-    const type = document.querySelector("#fireType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/10`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonWater(e) {
-    const type = document.querySelector("#waterType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/11`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonGrass(e) {
-    const type = document.querySelector("#grassType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/12`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonElectric(e) {
-    const type = document.querySelector("#electricType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/13`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonPsychic(e) {
-    const type = document.querySelector("#psychicType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/14`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonIce(e) {
-    const type = document.querySelector("#iceType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/15`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonDragon(e) {
-    const type = document.querySelector("#dragonType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/16`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonDark(e) {
-    const type = document.querySelector("#darkType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/17`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemonFairy(e) {
-    const type = document.querySelector("#fairyType").value;
-    
-      fetch(`https://pokeapi.co/api/v2/type/18`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        
-        let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-        let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-        
-        console.log(randomPokemonIndex);
-        console.log(randomPokemon);
-    
-        fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-            
-            console.log(pokemon);
-    
-            document.querySelector(".pokemonBox").innerHTML = `
-            <div>
-                    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
-            </div>
-            <div class="pokemonInfo">
-            <h1></h1>
-            <h2>New Pokemon: ${pokemon.name}</h2>
-            </div>
-            `;
-            })  
-        })
-        .catch((err) => {
-          console.log("Pokemon Type not Found", err);
-        });
-    
-      e.preventDefault();
-}
-function getPokemon(e) {
-  const type = document.querySelector("#pokemonType").value;
+  const type = document.querySelector("#fightingType").value;
 
-  fetch(`https://pokeapi.co/api/v2/type/${type}`)
+  fetch(`https://pokeapi.co/api/v2/type/2`)
     .then((response) => response.json())
     .then((data) => {
-        console.log(data);
-    
-    let randomPokemonIndex = Math.floor(Math.random()*data.pokemon.length)
-    let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
-    
-    console.log(randomPokemonIndex);
-    console.log(randomPokemon);
+      console.log(data);
 
-    fetch(randomPokemon).then((response) => response.json()).then((pokemon) => {
-        
-        console.log(pokemon);
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
 
-        document.querySelector(".pokemonBox").innerHTML = `
-        <div>
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
                 <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
         </div>
+        <br>
         <div class="pokemonInfo">
         <h1></h1>
-        <h2>New Pokemon: ${pokemon.name}</h2>
+        <p>Name: ${pokemon.name}</p>
+        <p>Secondary Type: ${pokemonTypeSecondary}</p>
+        <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+        <p>Height: ${pokemon.height}</p>
+        <p>Weight: ${pokemon.weight}</p>
         </div>
         `;
-        })  
+        });
     })
     .catch((err) => {
       console.log("Pokemon Type not Found", err);
@@ -693,3 +112,821 @@ function getPokemon(e) {
 
   e.preventDefault();
 }
+function getPokemonFlying(e) {
+  const type = document.querySelector("#flyingType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/3`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+                <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+        </div>
+        <br>
+        <div class="pokemonInfo">
+        <h1></h1>
+        <p>Name: ${pokemon.name}</p>
+        <p>Secondary Type: ${pokemonTypeSecondary}</p>
+        <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+        <p>Height: ${pokemon.height}</p>
+        <p>Weight: ${pokemon.weight}</p>
+        </div>
+        `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonPoison(e) {
+  const type = document.querySelector("#poisonType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/4`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonGround(e) {
+  const type = document.querySelector("#groundType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/5`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonRock(e) {
+  const type = document.querySelector("#rockType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/6`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonBug(e) {
+  const type = document.querySelector("#bugType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/7`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonGhost(e) {
+  const type = document.querySelector("#ghostType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/8`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonSteel(e) {
+  const type = document.querySelector("#steelType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/9`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonFire(e) {
+  const type = document.querySelector("#fireType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/10`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonWater(e) {
+  const type = document.querySelector("#waterType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/11`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonGrass(e) {
+  const type = document.querySelector("#grassType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/12`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonElectric(e) {
+  const type = document.querySelector("#electricType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/13`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonPsychic(e) {
+  const type = document.querySelector("#psychicType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/14`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonIce(e) {
+  const type = document.querySelector("#iceType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/15`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonDragon(e) {
+  const type = document.querySelector("#dragonType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/16`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonDark(e) {
+  const type = document.querySelector("#darkType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/17`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemonFairy(e) {
+  const type = document.querySelector("#fairyType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/18`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+            <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+function getPokemon(e) {
+  const type = document.querySelector("#pokemonType").value;
+
+  fetch(`https://pokeapi.co/api/v2/type/${type}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let randomPokemonIndex = Math.floor(Math.random() * data.pokemon.length);
+      let randomPokemon = data.pokemon[randomPokemonIndex].pokemon.url;
+
+      console.log(randomPokemonIndex);
+      console.log(randomPokemon);
+
+      fetch(randomPokemon)
+        .then((response) => response.json())
+        .then((pokemon) => {
+          console.log(pokemon);
+
+          if (pokemon.types.length > 1) {
+            pokemonTypeSecondary = pokemon.types[1].type.name;
+          } else {
+            pokemonTypeSecondary = "None!";
+          }
+
+          document.querySelector(".pokemonBox").innerHTML = `
+        <div>
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}"/>
+    </div>
+    <br>
+    <div class="pokemonInfo">
+    <h1></h1>
+    <p>Name: ${pokemon.name}</p>
+    <p>Secondary Type: ${pokemonTypeSecondary}</p>
+    <p>Ablities: ${pokemon.moves.length} Possible Moves</p>
+    <p>Height: ${pokemon.height}</p>
+    <p>Weight: ${pokemon.weight}</p>
+    </div>
+    `;
+        });
+    })
+    .catch((err) => {
+      console.log("Pokemon Type not Found", err);
+    });
+
+  e.preventDefault();
+}
+
+//.function changeImage() {
+
+//    var userInput = document.getElementById("pokemonType").value;
+//    var imageElement = document.getElementById('pikachu_face');
+
+//    if(userInput > 18 || userInput < 1) {
+//       imageElement.src = "./assets/pikachu_erro.png";
+//   }
+
+//    else {
+//       imageElement.src = "./assets/pikachu_funfact.png";
+//   }

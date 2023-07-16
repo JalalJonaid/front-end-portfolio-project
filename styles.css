@@ -31,26 +31,35 @@
     font-family: "Pokemon_Font";
     color: black;
     font-size: large;
+    padding: 10px;
 }
 
 .pokemonInfo {
-    color: blue;
+    color: yellowgreen;
     justify-content: end;
     align-items: end;
     font-size: 35px;
+    font-weight: 100;
 }
 
 .inputField {
     grid-area: 4/4/6/6;
-    background: #ffffff;
-    display: block;
+    background: beige;
     justify-content: center;
     align-items: center;
 }
 
+.inputField #pokemonType{
+    width: 300px;
+}
+
 .inputField button {
-    background-color: white;
+    background-color: beige;
     border: none;
+}
+
+.graphicField .pikachuTips{
+    font-size: 35px;
 }
 
 .buttonField {
@@ -66,8 +75,8 @@
     text-align: center;
     cursor: pointer;
     outline: none;
-    color: #fff;
-    background-color: #04AA6D;
+    color:beige;
+    background-color: lightskyblue;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
@@ -75,21 +84,28 @@
     color: black;
   }
   
-  .buttonField button:hover {background-color: #3e8e41}
+  .buttonField button:hover {background-color: yellow}
   
   .buttonField button:active {
-    background-color: #3e8e41;
+    background-color: yellow;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
+.pikachuTips {
+    display: inline-block;
+    align-items: right;
+    justify-content: right;
+    font-family: "Pokemon_Font";
+    font-size: 20px;
+}
 
 .graphicField {
     grid-area: 2/4/4/6;
     height: flex;
     background: beige;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
 }
 
 .pokemonBox img {
