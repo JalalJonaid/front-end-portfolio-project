@@ -161,7 +161,7 @@ function getPokemonPoison(e) {
 function getPokemonGround(e) {
     const type = document.querySelector("#groundType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/5`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -196,7 +196,7 @@ function getPokemonGround(e) {
 function getPokemonRock(e) {
     const type = document.querySelector("#rockType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/6`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -231,7 +231,7 @@ function getPokemonRock(e) {
 function getPokemonBug(e) {
     const type = document.querySelector("#bugType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/7`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -266,7 +266,7 @@ function getPokemonBug(e) {
 function getPokemonGhost(e) {
     const type = document.querySelector("#ghostType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/8`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -301,7 +301,7 @@ function getPokemonGhost(e) {
 function getPokemonSteel(e) {
     const type = document.querySelector("#steelType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/9`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -336,7 +336,7 @@ function getPokemonSteel(e) {
 function getPokemonFire(e) {
     const type = document.querySelector("#fireType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/10`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -371,7 +371,7 @@ function getPokemonFire(e) {
 function getPokemonWater(e) {
     const type = document.querySelector("#waterType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/11`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -406,7 +406,7 @@ function getPokemonWater(e) {
 function getPokemonGrass(e) {
     const type = document.querySelector("#grassType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/12`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -441,7 +441,7 @@ function getPokemonGrass(e) {
 function getPokemonElectric(e) {
     const type = document.querySelector("#electricType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/13`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -476,7 +476,7 @@ function getPokemonElectric(e) {
 function getPokemonPsychic(e) {
     const type = document.querySelector("#psychicType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/14`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -511,7 +511,7 @@ function getPokemonPsychic(e) {
 function getPokemonIce(e) {
     const type = document.querySelector("#iceType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/15`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -546,7 +546,7 @@ function getPokemonIce(e) {
 function getPokemonDragon(e) {
     const type = document.querySelector("#dragonType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/16`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -579,9 +579,9 @@ function getPokemonDragon(e) {
       e.preventDefault();
 }
 function getPokemonDark(e) {
-    const type = document.querySelector("#DarkType").value;
+    const type = document.querySelector("#darkType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/17`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -616,7 +616,7 @@ function getPokemonDark(e) {
 function getPokemonFairy(e) {
     const type = document.querySelector("#fairyType").value;
     
-      fetch(`https://pokeapi.co/api/v2/type/4`)
+      fetch(`https://pokeapi.co/api/v2/type/18`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
@@ -648,10 +648,6 @@ function getPokemonFairy(e) {
     
       e.preventDefault();
 }
-
-
-
-
 function getPokemon(e) {
   const type = document.querySelector("#pokemonType").value;
 
